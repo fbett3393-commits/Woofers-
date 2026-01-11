@@ -1,101 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fextoh Bass Hub</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #f2f2f2; text-align: center; }
-        h1 { color: #111; }
-        .tagline { color: #555; margin-bottom: 20px; }
+        /* General Styles */
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #f4f4f4; 
+            margin: 0; 
+            padding: 0; 
+        }
+        h1 { color: #111; margin-top: 20px; }
+        .tagline { color: #555; margin-bottom: 20px; font-size: 18px; }
 
+        /* Header Banner */
+        header {
+            background: #222;
+            color: #fff;
+            padding: 25px 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        header h1 { font-size: 32px; margin: 0; }
+        header p { font-size: 18px; margin: 5px 0 0 0; }
+
+        /* Product Grid */
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px 10px;
+        }
         .product {
             background: white;
             padding: 15px;
-            margin: 10px;
-            border-radius: 10px;
-            width: 280px;
-            display: inline-block;
+            margin: 15px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
         }
-
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
         img {
             width: 100%;
             height: 180px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 10px;
         }
+        h3 { margin: 10px 0; color: #222; }
+        .price { color: green; font-weight: bold; font-size: 18px; margin-bottom: 10px; }
 
-        .price { color: green; font-weight: bold; font-size: 18px; }
-
+        /* WhatsApp Buttons */
         .whatsapp {
             display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
+            padding: 10px 20px;
             background: #25D366;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            animation: bounce 1s infinite;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .whatsapp:hover {
+            background: #1ebe57;
         }
 
+        /* Fixed WhatsApp Button on mobile */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            padding: 15px 20px;
+            font-size: 18px;
+            animation: bounce 1s infinite;
+        }
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-6px); }
         }
 
+        /* Footer */
         footer {
-            background: #111;
+            background: #222;
             color: white;
-            padding: 15px;
+            padding: 20px 10px;
             margin-top: 30px;
+            text-align: center;
         }
+        footer p { margin: 5px 0; }
+
     </style>
 </head>
 <body>
 
-<h1>🔊 Fextoh Bass Hub</h1>
-<p class="tagline">Your Home of Deep Bass & Quality Sound</p>
-<p><strong>Location:</strong> Kiptagich</p>
+<header>
+    <h1>🔊 Fextoh Bass Hub</h1>
+    <p>Your Home of Deep Bass & Quality Sound – Kiptagich</p>
+</header>
 
-<div class="product">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/JBL_PartyBox.jpg">
-    <h3>JBL PartyBox 310</h3>
-    <p class="price">KSh 85,000</p>
-    <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
+<div class="product-container">
+
+    <div class="product">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/JBL_PartyBox.jpg">
+        <h3>JBL PartyBox 310</h3>
+        <p class="price">KSh 85,000</p>
+        <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
+    </div>
+
+    <div class="product">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Home_theater_subwoofer.jpg">
+        <h3>Sony Home Theatre Subwoofer</h3>
+        <p class="price">KSh 65,000</p>
+        <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
+    </div>
+
+    <div class="product">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Harman_Kardon_Onyx.jpg">
+        <h3>Harman Kardon Onyx Studio</h3>
+        <p class="price">KSh 45,000</p>
+        <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
+    </div>
+
+    <div class="product">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Soundbar_subwoofer.jpg">
+        <h3>Samsung Soundbar + Subwoofer</h3>
+        <p class="price">KSh 55,000</p>
+        <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
+    </div>
+
+    <div class="product">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Subwoofer_box.jpg">
+        <h3>Vitron 3.1CH Woofer</h3>
+        <p class="price">KSh 18,000</p>
+        <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
+    </div>
+
+    <div class="product">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Computer_subwoofer.jpg">
+        <h3>Sayona 2.1CH Subwoofer</h3>
+        <p class="price">KSh 9,500</p>
+        <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
+    </div>
+
 </div>
 
-<div class="product">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Home_theater_subwoofer.jpg">
-    <h3>Sony Home Theatre Subwoofer</h3>
-    <p class="price">KSh 65,000</p>
-    <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
-</div>
-
-<div class="product">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Harman_Kardon_Onyx.jpg">
-    <h3>Harman Kardon Onyx Studio</h3>
-    <p class="price">KSh 45,000</p>
-    <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
-</div>
-
-<div class="product">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Soundbar_subwoofer.jpg">
-    <h3>Samsung Soundbar + Subwoofer</h3>
-    <p class="price">KSh 55,000</p>
-    <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
-</div>
-
-<div class="product">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Subwoofer_box.jpg">
-    <h3>Vitron 3.1CH Woofer</h3>
-    <p class="price">KSh 18,000</p>
-    <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
-</div>
-
-<div class="product">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Computer_subwoofer.jpg">
-    <h3>Sayona 2.1CH Subwoofer</h3>
-    <p class="price">KSh 9,500</p>
-    <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
-</div>
+<!-- Fixed WhatsApp button for easy ordering -->
+<a class="whatsapp whatsapp-fixed" href="https://wa.me/254734208783" target="_blank">💬 WhatsApp Us</a>
 
 <footer>
     <p>📍 Fextoh Bass Hub – Kiptagich</p>
@@ -104,4 +162,4 @@
 </footer>
 
 </body>
-  </html>
+    </html>
