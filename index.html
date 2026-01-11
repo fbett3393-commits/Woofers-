@@ -1,122 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fextoh Bass Hub</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fextoh Bass Hub</title>
+<style>
+    /* General */
+    body {
+        font-family: 'Arial', sans-serif;
+        background: #f9f9f9;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
 
-        header {
-            background: #222;
-            color: #fff;
-            padding: 25px 10px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
+    /* Header */
+    header {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        color: #fff;
+        padding: 30px 10px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        position: relative;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 32px;
-        }
+    header h1 {
+        font-size: 36px;
+        margin: 0;
+    }
 
-        header p {
-            margin-top: 5px;
-            font-size: 18px;
-            color: #ddd;
-        }
+    header p {
+        font-size: 18px;
+        margin-top: 8px;
+        color: #e0e0e0;
+    }
 
-        .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px 10px;
-        }
+    /* Product Container */
+    .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px 10px;
+    }
 
-        .product {
-            background: #fff;
-            width: 90%;
-            max-width: 300px;
-            margin: 15px;
-            padding: 15px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    /* Product Card */
+    .product {
+        background: #fff;
+        width: 90%;
+        max-width: 300px;
+        margin: 15px;
+        padding: 15px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
 
-        .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-        }
+    .product:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    }
 
-        .product img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+    /* Product Image */
+    .product img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 15px;
+        transition: transform 0.3s;
+    }
 
-        .product h3 {
-            margin: 10px 0;
-            color: #222;
-        }
+    .product:hover img {
+        transform: scale(1.05);
+    }
 
-        .price {
-            color: green;
-            font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
+    /* Product Name and Price */
+    .product h3 {
+        margin: 15px 0 10px;
+        color: #222;
+        font-size: 20px;
+    }
 
-        .whatsapp {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #25D366;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
+    .price {
+        color: #27ae60;
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
 
-        .whatsapp:hover {
-            background: #1ebe57;
-        }
+    /* NEW Badge */
+    .badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: #e74c3c;
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
 
-        .whatsapp-fixed {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 15px 20px;
-            font-size: 18px;
-            z-index: 100;
-            animation: bounce 1s infinite;
-        }
+    /* WhatsApp Button */
+    .whatsapp {
+        display: inline-block;
+        padding: 12px 20px;
+        background: #25D366;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: bold;
+        transition: background 0.3s, transform 0.3s;
+    }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
+    .whatsapp:hover {
+        background: #1ebe57;
+        transform: scale(1.05);
+    }
 
-        footer {
-            background: #222;
-            color: #fff;
-            padding: 20px 10px;
-            text-align: center;
-            margin-top: 30px;
-        }
+    /* Fixed WhatsApp Button */
+    .whatsapp-fixed {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 18px 25px;
+        font-size: 18px;
+        z-index: 100;
+        animation: bounce 1s infinite;
+        border-radius: 50px;
+    }
 
-        footer p {
-            margin: 5px 0;
-        }
-    </style>
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+
+    /* Footer */
+    footer {
+        background: #222;
+        color: #fff;
+        padding: 25px 10px;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    /* Responsive */
+    @media (min-width: 600px) {
+        .product-container { padding: 40px 20px; }
+        .product img { height: 220px; }
+    }
+
+</style>
 </head>
-
 <body>
 
 <header>
@@ -128,39 +170,35 @@
 
     <!-- 1. AMTEC -->
     <div class="product">
+        <div class="badge">NEW</div>
         <img src="https://github.com/fbett3393-commits/Woofers-/raw/main/images/images/1768157505704.jpg" alt="AMTEC 2.1CH Woofer" loading="lazy">
         <h3>AMTEC 2.1CH Woofer</h3>
         <p class="price">KSh 12,500</p>
-        <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">
-            Order on WhatsApp
-        </a>
+        <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
     </div>
 
-    <!-- Placeholder for 2nd and 3rd products -->
+    <!-- 2. Second Product Placeholder -->
     <div class="product">
+        <div class="badge">NEW</div>
         <img src="https://via.placeholder.com/300x180.png?text=Second+Product" alt="Second Product" loading="lazy">
         <h3>Second Product Name</h3>
         <p class="price">KSh 0</p>
-        <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">
-            Order on WhatsApp
-        </a>
+        <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
     </div>
 
+    <!-- 3. Third Product Placeholder -->
     <div class="product">
+        <div class="badge">NEW</div>
         <img src="https://via.placeholder.com/300x180.png?text=Third+Product" alt="Third Product" loading="lazy">
         <h3>Third Product Name</h3>
         <p class="price">KSh 0</p>
-        <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">
-            Order on WhatsApp
-        </a>
+        <a class="whatsapp" href="https://wa.me/254734208783" target="_blank">Order on WhatsApp</a>
     </div>
 
 </div>
 
 <!-- Fixed WhatsApp Button -->
-<a class="whatsapp whatsapp-fixed" href="https://wa.me/254734208783" target="_blank">
-    💬 WhatsApp Us
-</a>
+<a class="whatsapp whatsapp-fixed" href="https://wa.me/254734208783" target="_blank">💬 WhatsApp Us</a>
 
 <footer>
     <p>📍 Fextoh Bass Hub – Kiptagich</p>
@@ -169,4 +207,4 @@
 </footer>
 
 </body>
-</html>
+        </html>
